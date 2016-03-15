@@ -18,8 +18,8 @@ class Wall(GameThing):
     """
     A wall on the game map. Currently just a container which knows it's position and how to render.
     """
-    def __init__(self, x, y, type):
-        GameThing.__init__(self, x, y)
+    def __init__(self, gamemap, x, y, type):
+        GameThing.__init__(self, gamemap, x, y)
         if not isinstance(type, WallType): raise TypeError('Must pass a WallType to Wall')
         self.type = type
 

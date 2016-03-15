@@ -18,11 +18,11 @@ class Game:
                 if key is '[':
                     key = getch()
                     if key is 'A':
-                        self.pacman.move(self.gamemap, Y=-1)
+                        self.pacman.move(Y=-1)
                     elif key is 'B':
-                        self.pacman.move(self.gamemap, Y=1)
+                        self.pacman.move(Y=1)
                     elif key is 'C':
-                        self.pacman.move(self.gamemap, X=1)
+                        self.pacman.move(X=1)
                     elif key is 'D':
-                        self.pacman.move(self.gamemap, X=-1)
+                        self.pacman.move(X=-1)
 

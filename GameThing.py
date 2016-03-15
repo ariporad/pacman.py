@@ -3,13 +3,13 @@ class GameThing:
     A generic base class for anything on the game board
     """
 
-    def __init__(self, x, y):
+    def __init__(self, gamemap, x, y):
         """
         :param x: The (initial) x coordinate of the object
         :param y: The (initial) y coordinate of the object
         :return: None
         """
-        self.x, self.y = x, y
+        self.x, self.y, self.gamemap = x, y, gamemap
 
     def __str__(self):
         return self.render()

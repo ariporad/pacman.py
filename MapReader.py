@@ -17,11 +17,11 @@ class MapReader:
                 for x, char in enumerate(chars):
                     if char is '@':
                         if pacman: raise MapError('Duplicate Pacman!')
-                        pacman = Pacman(x, y)
+                        pacman = Pacman(gamemap, x, y)
                         gamemap[y][x] = pacman
                     elif char in WALLS:
-                        gamemap[y][x] = Wall(x, y, WallType(char))
+                        gamemap[y][x] = Wall(gamemap, x, y, WallType(char))
                     elif char is PELLET:
-                        gamemap[y][x] = Pellet(x, y)
+                        gamemap[y][x] = Pellet(gamemap, x, y)
         return (gamemap, pacman)
 
