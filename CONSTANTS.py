@@ -1,0 +1,11 @@
+PACMAN = '@'
+PELLET = '.'
+WALLS = ('┃', '━', '┏', '┓', '┗', '┛', '┳')
+UP_ARROW = '\033[A'
+DOWN_ARROW = '\033[B'
+RIGHT_ARROW = '\033[C'
+LEFT_ARROW = '\033[D'
+WIDTH = 40 # This must be half of how wide the output should actually be, because everything renders as 2 chars.
+HEIGHT = 31
+DEV = True
+SOLID_WALLS = True # This way we can disable solid walls for debugging.
