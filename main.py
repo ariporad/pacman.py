@@ -4,8 +4,8 @@ from Game import Game
 
 def main():
     reader = MapReader()
-    gamemap, pacman = reader.read('gamemap.txt')
-    g = Game(gamemap, pacman)
+    gamemap, pacman, ghosts = reader.read('gamemap.txt')
+    g = Game(gamemap, pacman, ghosts)
     g.start()
 
 

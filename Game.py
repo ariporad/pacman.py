@@ -40,5 +40,6 @@ class Game:
         subthread.start()
         while True:
             if self._should_exit_: return exit(0)
+            for ghost in self.ghosts: ghost.get_next_move()
             self.r.draw(self.gamemap)
             sleep(0.1)
