@@ -1,5 +1,5 @@
 Corner - ┏ ┓ ┗ ┛
-Side - ┃
+Side - ┃┣,  ┫
 Horizontal - ━ ┳
 Pacman - ᗤ (U+15E4) ᗧ (U+15E7) ᗣ (U+15E3). Search Unicode "CANADIAN"
 
