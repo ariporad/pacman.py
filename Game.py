@@ -2,6 +2,7 @@ from Renderer import Renderer
 from readchar import readkey
 from time import sleep
 from threading import Thread
+from Ghost import GhostMovementMode
 
 
 class GameSubthread(Thread):
@@ -26,6 +27,12 @@ class Game:
             key = readkey()
             if key is 'q':
                 self._should_exit_ = True
+            elif key is 'c':
+                for ghost in self.ghosts: ghost.change_mode(GhostMovementMode.Chase)
+            elif key is 'x':
+                for ghost in self.ghosts: ghost.change_mode(GhostMovementMode.Scatter)
+            elif key is 'f':
+                for ghost in self.ghosts: ghost.change_mode(GhostMovementMode.Frightened)
             elif key is 'w':
                 self.pacman.move(Y=-1)
             elif key is 'a':
