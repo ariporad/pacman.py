@@ -15,26 +15,19 @@ class Renderer:
         #     points=points
         # )
 
-    def _clear_screen_(self, gamemap):
-        lines = len(gamemap) + 1
-        if self._drawing_devtools_: lines += 1
-        print("\033[{!s}A".format(lines))
-
     def draw(self, gamemap):
-        output = ''
-
-        self._clear_screen_(gamemap)
+        # Clear the screen
+        print('\033[2J', end='')
 
         for line in gamemap:
+            str = ''
             for char in line:
                 if char is None:
-                    output += '  '
+                    str += '  '
                 else:
                     rendered = char.render()
-                    output += rendered if len(rendered) >= 2 else rendered + ' '  # Auto pad with a space
-            output += '\n'
-
-        print(output)
+                    str += rendered if len(rendered) >= 2 else rendered + ' '  # Auto pad with a space
+            print(str, end='\n\r')
 
         if self._drawing_devtools_:
             print(self._get_debug_bar_(gamemap))
