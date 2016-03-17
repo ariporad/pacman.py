@@ -1,12 +1,12 @@
 from Renderer import Renderer
 from readchar import readkey
-from sys import exit
 from time import sleep
 from threading import Thread
 
 
 class GameSubthread(Thread):
     daemon = True
+
     def __init__(self, g):
         Thread.__init__(self)
         self.g = g
@@ -35,11 +35,16 @@ class Game:
             elif key is 'd':
                 self.pacman.move(X=1)
 
+    def _cleanup_(self):
+        print('\n\r', end='')
+
     def start(self):
         subthread = GameSubthread(self)
         subthread.start()
         while True:
-            if self._should_exit_: return exit(0)
+            if self._should_exit_:
+                self._cleanup_()
+                return
             for ghost in self.ghosts: ghost.get_next_move()
             self.r.draw(self.gamemap)
             sleep(0.1)
