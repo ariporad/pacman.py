@@ -6,6 +6,7 @@ class Pacman(GameThing):
     def __init__(self, gamemap, x, y):
         GameThing.__init__(self, gamemap, x, y)
         self.points = 0
+        self.oldX, self.oldY = self.x + 1, self.y # This makes pacman start pointing left.
 
     # +X = right, +Y = down
     def move(self, X = 0, Y = 0): # TODO: don't take a gamemap
@@ -20,6 +21,7 @@ class Pacman(GameThing):
             newX = 27
         self.gamemap[self.y][self.x] = None
         self.gamemap[newY][newX] = self
+        self.oldX, self.oldY = self.x, self.y
         self.x, self.y = newX, newY
 
     def render(self):
