@@ -10,7 +10,7 @@ def main():
 
     try:
         reader = MapReader()
-        gamemap, pacman, ghosts = reader.read('gamemap.txt')
+        gamemap, pacman, ghosts, ghostManager = reader.read('gamemap.txt')
         g = Game(gamemap, pacman, ghosts)
         g.start()
     finally:

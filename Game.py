@@ -3,6 +3,7 @@ from readchar import readkey
 from time import sleep
 from threading import Thread
 from Ghost import GhostMovementMode
+from Pellet import Pellet
 
 
 class GameSubthread(Thread):
